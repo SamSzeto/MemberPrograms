@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CBIA - Contact Data Sheet</title>
+<script language="javascript">
+
+	function clickButton(action)
+		{
+		var programName = "";	
+		if(action == 'save')
+			{
+			document.getElementById('form1').submit();
+			}
+			else
+				{
+				window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSForm&arguments=-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+				}
+		
+		}
+	
+	
+	
+	function enableSaveButton()
+	{
+	document.getElementById('button').removeAttribute('disabled');
+	}
+
+	
+	function disableSaveButton()
+	{
+	document.getElementById('button').disabled=true;
+	}
+
+	function resetForm()
+	{
+	document.getElementById('form1').reset();
+	}	
+	
+	</script>	
+	
+
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}
+
+	.pageHeader{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+	}	
+	
+	.companyHeader{
+		font-size: 24px;
+		background-color: #CFE5E2;		
+		margin-left: auto;
+		margin-right: auto;		
+		line-height: 80px;
+	}	
+	
+	.personHeader{
+		background-color: #DF9B9C;	
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	
+	.personHeader tr{
+		line-height: 50px;
+	}
+	
+	.personDetail{
+		background-color: #DFDFDF;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 800px) {
+  table {
+  width: 90%;}
+}	
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 1200px) {
+  table {
+  width: 1200px;}
+}	
+	
+	
+	.personDetail tr{
+		line-height: 40px;
+	}	
+	
+	.personDetail td{
+		padding-left: 10px;
+	}
+	
+	
+	.buttonTable{
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.buttonTable tr{
+		line-height: 80px;
+	}
+	
+	
+	.personname{
+		width: 250px;
+	}
+	
+	.addressline{
+		width: 400px;
+	}
+	
+	.city{
+		width: 250px;
+	}
+
+	.state{
+		width: 50px;
+	}	
+	
+	.zip{
+		width: 200px;
+	}	
+	
+	.phone{
+		width: 200px;
+	}	
+	
+	.email{
+		width: 400px;
+	}
+
+	
+	.ctemployee{
+		width: 100px;
+	}	
+	
+	
+	.sic{
+		width: 70px;
+		
+	}	
+	
+	input[type="text"]{ 
+		padding: 4px 6px; 
+		line-height: 20px; 
+		font-size: 18px;
+	}	
+	
+
+	input[type="number"]{ 
+		padding: 4px 6px; 
+		line-height: 20px; 
+		font-size: 18px;
+		appearance: textfield;
+	}
+	
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}	
+	
+
+	.custom-select select{
+		padding: 4px 6px;
+		font-size: 18px;	
+		
+	}
+	
+	input.largerCheckbox{
+        width: 15px;
+        height: 15px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+        }
+
+	input[type="button"]{
+		height: 60px;
+		font-size: 20px;
+		border-radius: 6px;
+		width: 200px;
+		background-color: yellow;
+	}
+	
+	input[type="button"]:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}
+	
+	input[type="button"].disabled,
+	input[type="button"][disabled]
+	{
+		background-color: white;
+		color: gray;
+		cursor: auto;
+	}
+	
+	input[type="reset"]{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+		width: 200px;
+		background-color: white;
+	}
+	
+	input[type="reset"]:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}	
+	
+	
+	
+</style>	
+	
+	
+</head>
+
+<body>
+	
+<table border="0" class="pageHeader">
+	<tr>
+	<td>
+	<img width="207" height="134" src="https://www.cbia.com/wp-content/uploads/2022/05/brand-cbia.svg">	
+	</td>
+	</tr>
+</table>
+	
+	
+<form id="form1" method="post" action="(!$MG_mwserver)(!$MG_mwscript)?">
+	
+<table border="0" class="companyHeader">
+  <tbody>
+    <tr>
+      <td align="center" style="padding-left: 4px">Update company information - (!$MG_accountname)</td>
+    </tr>
+  </tbody>
+</table>
+<!--
+<table border="0" class="buttonTable">
+			<tr>
+			<td width="33%" align="center"><input type="button" name="button" id="button" value="Save Updates"  onClick="clickButton('save')" disabled>
+			</td>
+			<td width="33%" align="center"><input type="button" name="button2" id="button2" value="Return to previous screen" onClick="clickButton('return')">
+			</td>
+			<td width="34%" align="center"><input type="reset" name="button3" id="button3" value="Reset" onClick="disableSaveButton()"></td>
+			</tr>
+ </table>	
+-->	
+<table border="0" class="personDetail">
+	<tr>
+		<td width="20%">&nbsp;</td>
+		<td width="40%"><strong>Current Information</strong></td>		
+	    <td width="40%"><strong>Provide any update below</strong></td>	
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Phone:</strong></td>
+		<td width="40%">(!$MG_companyphone)</td>	
+	  <td width="40%"><input type="text" name="companyphone" id="companyphone" class="phone" value="(!$MG_newcompanyphone)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Fax:</strong></td>
+		<td width="40%">(!$MG_companyfax)</td>	
+	  <td width="40%"><input type="text" name="companyfax" id="companyfax" class="phone" value="(!$MG_newcompanyfax)" oninput="enableSaveButton()"></td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Mailing Address Line 1:</strong></td>
+		<td width="40%">(!$MG_companyaddr1)</td>	
+	  <td width="40%"><input type="text" name="companyaddr1" id="companyaddr1" class="addressline" value="(!$MG_newcompanyaddr1)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Mailing Address Line 2:</strong></td>
+		<td width="40%">(!$MG_companyaddr2)</td>	
+	  <td width="40%"><input type="text" name="companyaddr2" id="companyaddr2" class="addressline" value="(!$MG_newcompanyaddr2)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Mailing CIty:</strong></td>
+		<td width="40%">(!$MG_companycity)</td>	
+	  <td width="40%"><input type="text" name="companycity" id="companycity" class="city" value="(!$MG_newcompanycity)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Mailing State:</strong></td>
+		<td width="40%">(!$MG_companystate)</td>	
+	  <td width="40%"><input type="text" name="companystate" id="companystate" class="state" value="(!$MG_newcompanystate)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Mailing Zip:</strong></td>
+		<td width="40%">(!$MG_companyzip)</td>	
+	  <td width="40%"><input type="text" name="companyzip" id="companyzip" class="zip" value="(!$MG_newcompanyzip)" oninput="enableSaveButton()"></td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Physical Address Line 1:</strong></td>
+		<td width="40%">(!$MG_physicaladdr1)</td>	
+	  <td width="40%"><input type="text" name="physicaladdr1" id="physicaladdr1" class="addressline" value="(!$MG_newphysicaladdr1)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Physical Address Line 2:</strong></td>
+		<td width="40%">(!$MG_physicaladdr2)</td>	
+	  <td width="40%"><input type="text" name="physicaladdr2" id="physicaladdr2" class="addressline" value="(!$MG_newphysicaladdr2)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Physical CIty:</strong></td>
+		<td width="40%">(!$MG_physicalcity)</td>	
+	  <td width="40%"><input type="text" name="physicalcity" id="physicalcity" class="city" value="(!$MG_newphysicalcity)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Physical State:</strong></td>
+		<td width="40%">(!$MG_physicalstate)</td>	
+	  <td width="40%"><input type="text" name="physicalstate" id="physicalstate" class="state" value="(!$MG_newphysicalstate)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Physical Zip:</strong></td>
+		<td width="40%">(!$MG_physicalzip)</td>	
+	  <td width="40%"><input type="text" name="physicalzip" id="physicalzip" class="zip" value="(!$MG_newphysicalzip)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Employees in CT:</strong></td>
+		<td width="40%">&nbsp;</td>	
+	  <td width="40%"><input type="number" name="ctemployee" id="ctemployee" class="ctemployee" value="(!$MG_newctemployee)" oninput="enableSaveButton()" maxlength="6"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Annual Payroll:</strong></td>
+		<td width="40%">&nbsp;</td>	
+	  <td width="40%"><input type="number" name="payroll" id="payroll" class="ctemployee" value="(!$MG_newpayroll)" oninput="enableSaveButton()" maxlength="9"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Primary Sic Code:</strong></td>
+		<td width="40%">(!$MG_sic)</td>	
+	  <td width="40%"><input type="number" name="sic" id="sic" class="sic" value="(!$MG_newsic)" oninput="enableSaveButton()" maxlength="4">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://siccode.com/sic-code-lookup-directory" target="_blank">Sic Lookup</a></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Company Website:</strong></td>
+		<td width="40%">(!$MG_website)</td>	
+	  <td width="40%"><input type="text" name="website" id="website" class="addressline" value="(!$MG_newwebsite)" oninput="enableSaveButton()"></td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Family Own Business:</strong></td>
+		<td width="40%">(!$MG_familyown)</td>	
+	  <td width="40%"><div id="familyownDiv" class="custom-select"><select name="familyown" id="familyown">
+	    <option value="blank" (!$MG_familyownblank)></option>
+	    <option value="YES" (!$MG_familyownyes)>Yes</option>
+	    <option value="NO" (!$MG_familyownno)>No</option>
+		  </select></div</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Type of Entity:</strong></td>
+		<td width="40%">(!$MG_entity)</td>	
+	  <td width="40%"><div id="entityDiv" class="custom-select"><select name="entity" id="entity">
+	    <option value="blank" (!$MG_entityblank)></option>
+	    <option value="C-Corp" (!$MG_entityccorp)>C-Corp</option>
+	    <option value="S-Corp" (!$MG_entityscorp)>S-Corp</option>
+	    <option value="LLP" (!$MG_entityllp)>LLP</option>
+	    <option value="LLC" (!$MG_entityllc)>LLC</option>
+	    <option value="Sole Proprietorship" (!$MG_entitysole)>Sole Proprietorship</option>
+	    <option value="Other" (!$MG_entitysole)>Other</option>		  
+		  </select></div></td>
+	</tr>
+	<tr>
+		<td width="20%">&nbsp;</td>
+		<td width="40%"></td>	
+	  <td width="40%">&nbsp;</td>
+	</tr>	
+</table>
+<table border="0" class="buttonTable">
+			<tr>
+			<td width="33%" align="right"><a href="#" style="font-size: 14px" onClick="clickButton('return')">Return to previous screen</a>
+			</td>
+			<td width="33%" align="center"><input type="button" name="button" id="button" value="Continue"  onClick="clickButton('save')">
+			</td>
+			<td width="34%" align="left"><a href="#" style="font-size: 14px" onClick="resetForm()">Reset</a></td>
+	</tr>
+ </table>	
+<input name="appname" type="hidden" id="appname" value="MemberPrograms">
+<input name="prgname" type="hidden" id="prgname" value="CompanySubmit">
+<input name="UrlIdentifier" type="hidden" id="UrlIdentifier" value="(!$MG_urlidentifier)">
+<input name="PassPhrase" type="hidden" id="PassPhrase" value="(!$MG_securityphrase)">
+</form>
+
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>	
+	
+<script>
+$(function(){
+	var $mainForm = $("#form1");
+
+	$("#form1").validate({
+		rules:{
+			firstName:{
+				required: true
+			}
+			
+		},
+		message:{
+			firstName:{
+				required: 'fuck'
+			}
+		}
+		
+		
+	}
+	
+	
+	)
+
+
+
+})	
+	
+	
+</script>	
+	
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact Data Sheet Dashboard</title>
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}	
+	
+	</style>	
+	
+	
+</head>
+
+<body>
+<h1>&nbsp;</h1>
+<table width="90%" border="0">
+
+    <tr>
+      <td width="10px">&nbsp;</td>
+      <td><h1>CRM Contact Data Sheet - Send Single Email</h1>&nbsp;</td>
+    </tr>
+
+</table>
+<br>
+<table width="90%" border="0">
+
+    <tr>
+      <td width="10px">&nbsp;</td>
+      <td width="200px" valign="top">
+<form id="form1" name="form1" method="post" action="(!$MG_mwserver)(!$MG_mwscript)?">
+
+<table border="0" style="background-color: #EBF026" cellpadding="4px">
+
+    <tr>
+      <td valign="top"><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSEmailLog">Contact Data Sheet Email Log</a></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSSubmittedAccounts">Submitted Contact Data Sheet with Changes</a></td>
+    </tr>	  
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSSendSingleEmailForm">Send Single Email</a></td>
+    </tr>	
+    <tr>
+      <td>&nbsp;</td>
+    </tr>	
+    <tr>
+      <td><input name="accountnumber" type="text" id="accountnumber" size="15" maxlength="5" placeholder="enter account number">&nbsp;
+        <input type="submit" name="submit" id="submit" value="Search">
+        <input name="appname" type="hidden" id="appname" value="MemberPrograms">
+        <input name="prgname" type="hidden" id="prgname" value="CDSAccountSearch"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>	
+</table>
+		  </form>
+		</td>
+      <td valign="top"><form id="form2" name="form2" method="post" action="(!$MG_mwserver)(!$MG_mwscript)?">
+        <table width="100%" border="0">
+          <tbody>
+            <tr>
+              <td width="20%">Account Number:</td>
+              <td><input type="text" name="accountnumber" id="accountnumber"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td valign="top">Type:</td>
+              <td><p>
+                <label>
+                  <input name="cdsType" type="radio" id="cdsType_0" value="A">
+                  Renewal</label>
+                <br>
+                <label>
+                  <input type="radio" name="cdstype" value="N" id="cdsType_1">
+                  New Member </label>
+                <br>
+              </p></td>
+            </tr>			  
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>			  
+            <tr>
+              <td>&nbsp;</td>
+              <td><input type="submit" name="submit2" id="submit2" value="Search Account">
+              <input name="appname" type="hidden" id="appname" value="MemberPrograms">
+              <input name="prgname" type="hidden" id="prgname" value="CDSSendSingleEmailSearch"></td>
+            </tr>
+          </tbody>
+        </table>
+      </form></td>
+    </tr>
+
+</table>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

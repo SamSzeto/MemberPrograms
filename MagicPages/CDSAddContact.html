@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CBIA - Contact Data Sheet</title>
+<script language="javascript">
+
+	function clickButton(action)
+		{
+		var programName = "";	
+		if(action == 'save')
+			{
+			document.getElementById('form1').submit();
+			}
+			else
+				{
+				window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSForm&arguments=-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+				}
+		
+		}
+
+	function resetForm()
+	{
+	document.getElementById('form1').reset();
+	}	
+	
+	</script>	
+	
+
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}
+
+	.pageHeader{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+	}	
+	
+	
+	.personHeader{
+		background-color: #DF9B9C;	
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	
+	.personHeader tr{
+		line-height: 50px;
+	}
+	
+	.personDetail{
+		background-color: #DFDFDF;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 800px) {
+  table {
+  width: 90%;}
+}	
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 1200px) {
+  table {
+  width: 1200px;}
+}	
+	
+	
+	.personDetail tr{
+		line-height: 40px;
+	}	
+	
+	.personDetail td{
+		padding-left: 10px;
+	}
+	
+	
+	.buttonTable{
+		background-color: #DFDFDF;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.buttonTable tr{
+		line-height: 80px;
+	}
+	
+	
+	.personname{
+		width: 250px;
+	}
+	
+	.addressline{
+		width: 400px;
+	}
+	
+	.city{
+		width: 250px;
+	}
+
+	.state{
+		width: 50px;
+	}	
+	
+	.zip{
+		width: 200px;
+	}	
+	
+	.phone{
+		width: 200px;
+	}	
+	
+	.email{
+		width: 400px;
+	}
+	
+	input[type="text"]{ 
+		padding: 4px 6px; 
+		line-height: 20px; 
+		font-size: 18px;
+	}	
+	
+	input.largerCheckbox{
+        width: 15px;
+        height: 15px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+        }
+
+	input[type="button"]{
+		height: 60px;
+		font-size: 20px;
+		border-radius: 6px;
+		width: 200px;
+		background-color: yellow;
+	}
+	
+	input[type="button"]:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}	
+	
+	input[type="reset"]{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+		width: 200px;
+		background-color: white;
+	}
+	
+	input[type="reset"]:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}	
+	
+	
+	
+</style>	
+	
+	
+</head>
+
+<body>
+	
+<table border="0" class="pageHeader">
+	<tr>
+	<td>
+	<img width="207" height="134" src="https://www.cbia.com/wp-content/uploads/2022/05/brand-cbia.svg">	
+	</td>
+	</tr>
+</table>
+	
+	
+<form id="form1" method="post" action="(!$MG_mwserver)(!$MG_mwscript)?">
+	
+<table border="0" class="personHeader">
+  <tbody>
+    <tr>
+      <td align="center" style="padding-left: 4px">(!$MG_headertext)</td>
+    </tr>
+  </tbody>
+</table>
+<!--	
+<table border="0" class="buttonTable">
+			<tr>
+			<td width="33%" align="center"><input type="button" name="button" id="button" value="(!$MG_savebuttontitle)"  onClick="clickButton('save')">
+			</td>
+			<td width="33%" align="center"><input type="button" name="button2" id="button2" value="Return to previous screen" onClick="clickButton('return')">
+			</td>
+			<td width="34%" align="center"><input type="reset" name="button3" id="button3" value="Reset"></td>
+			</tr>
+ </table>	
+-->	
+<table border="0" class="personDetail">
+	<tr>
+		<td width="15%">&nbsp;</td>
+		<td width="40%">&nbsp;</td>		
+	    <td width="45%">&nbsp;</td>	
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Last Name:</strong></td>
+		<td width="40%"><input type="text" name="lastName" id="lastName" class="personname" value="(!$MG_newlastname)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>First Name:</strong></td>
+		<td width="40%"><input type="text" name="firstName" id="firstName" class="personname" value="(!$MG_newfirstname)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="15%"><strong>Title:</strong></td>
+		<td width="40%"><input type="text" name="title" id="title" class="personname" value="(!$MG_newtitle)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Company Name:</strong></td>
+		<td width="40%"><input type="text" name="contactCompany" id="contactCompany" class="addressline" value="(!$MG_newcontactcompany)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Address Line 1:</strong></td>
+		<td width="40%"><input type="text" name="addr1" id="addr1" class="addressline" value="(!$MG_newaddr1)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Address Line 2:</strong></td>
+		<td width="40%"><input type="text" name="addr2" id="addr2" class="addressline" value="(!$MG_newaddr2)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>City:</strong></td>
+		<td width="40%"><input type="text" name="city" id="city" class="city" value="(!$MG_newcity)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>State:</strong></td>
+		<td width="40%"><input type="text" name="state" id="state" class="state" value="(!$MG_newstate)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Zip:</strong></td>
+		<td width="40%"><input type="text" name="zip" id="zip" class="zip" value="(!$MG_newzip)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="15%"><strong>Phone:</strong></td>
+		<td width="40%"><input type="text" name="contactPhone" id="contactPhone" class="phone" value="(!$MG_newphone)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="15%"><strong>Email:</strong></td>
+		<td width="40%"><input type="text" name="email" id="email" class="email" value="(!$MG_newemail)"></td>	
+	  <td width="45%">&nbsp;</td>
+	</tr>
+</table>
+<table border="0" class="personDetail">
+	<tr>
+	<td colspan="2"><strong>Contact Type</strong> (a checked checkbox indicates this person is the CBIA contact for this type)</td>
+	</tr>
+	(!$MGREPEAT)
+	<tr>
+	<td width="5%">&nbsp;</td>
+	<td width="95%"><input type="checkbox" name="contactType(!$MG_typeid)" id="contactType(!$MG_typeid)" class="largerCheckbox" (!$MG_typechecked) value="Y">
+	  &nbsp;&nbsp;(!$MG_typedescription)</td>
+	</tr>
+	(!$MGENDREPEAT)	
+	<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+
+<table border="0" class="buttonTable">
+			<tr>
+			<td width="33%" align="right"><a href="#" style="font-size: 14px" onClick="clickButton('return')">Return to previous screen</a>
+			</td>
+			<td width="33%" align="center"><input type="button" name="button" id="button" value="Continue"  onClick="clickButton('save')">
+			</td>
+			<td width="34%" align="left"><a href="#" style="font-size: 14px" onClick="resetForm()">Reset</a></td>
+	</tr>
+ </table>	
+	
+<input name="appname" type="hidden" id="appname" value="MemberPrograms">
+<input name="prgname" type="hidden" id="prgname" value="ContactSubmit">
+<input name="PersonID" type="hidden" id="PersonID" value="(!$MG_personid)">
+<input name="UrlIdentifier" type="hidden" id="UrlIdentifier" value="(!$MG_urlidentifier)">
+<input name="PassPhrase" type="hidden" id="PassPhrase" value="(!$MG_securityphrase)">
+</form>
+
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>	
+	
+<script>
+$(function(){
+	var $mainForm = $("#form1");
+
+	$("#form1").validate({
+		rules:{
+			firstName:{
+				required: true
+			}
+			
+		},
+		message:{
+			firstName:{
+				required: 'fuck'
+			}
+		}
+		
+		
+	}
+	
+	
+	)
+
+
+
+})	
+	
+	
+</script>	
+	
+</body>
+</html>

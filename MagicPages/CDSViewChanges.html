@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CBIA - Contact Data Sheet</title>
+	
+<script language="javascript">
+	
+function hoverSign(sign)	
+	{
+	sign.style.color = "blue";
+	
+	}
+	
+function awaySign(sign)	
+	{
+	sign.style.color = "black";	
+	}	
+	
+function expandPerson(personID)
+	{
+	document.getElementById('personSection' + personID).style.display="block";
+	document.getElementById('plusSign' + personID).style.display="None";	
+	document.getElementById('minusSign' + personID).style.display="block";		
+	}
+	
+function colapsePerson(personID)
+	{
+	document.getElementById('personSection' + personID).style.display="none";
+	document.getElementById('plusSign' + personID).style.display="block";	
+	document.getElementById('minusSign' + personID).style.display="none";		
+	}	
+	
+
+function returnToList()
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=(!$MG_redirectprogram1)&arguments=-A(!$MG_redirectemaildatetime),-A(!$MG_redirectpagenumber)";
+	}
+	
+function completedProcessing()
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSCompletedProcessing&arguments=-A(!$MG_urlidentifier),-A(!$MG_redirectprogram2),-A(!$MG_redirectemaildatetime),-A(!$MG_redirectpagenumber)";
+	}	
+	
+	
+	</script>	
+	
+	
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}
+
+	.pageHeader{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+	}	
+
+		
+	.contactOptions{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+		border-collapse: collapse;
+		border: 1px solid;
+		padding-left: 5px;
+		padding-right: 5px;
+		border-radius: 10px;
+	}	
+	
+	ol li{ padding: 5px 0px; }
+	
+	ul li{ padding: 3px 0px; 
+		font-size: 16px;
+	}
+	
+	.companyHeader{
+		font-size: 24px;
+		background-color: #CFE5E2;		
+		margin-left: auto;
+		margin-right: auto;		
+		line-height: 80px;
+	}
+	
+	.personHeader{
+		background-color: #DF9B9C;		
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.personHeader tr{
+		line-height: 50px;
+	}
+	
+	.personDetail{
+		background-color:#E4E4E4;		
+		font-size: 16px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.personDetail tr{
+		line-height: 30px; 
+	}
+	
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 800px) {
+  table {
+  width: 90%;}
+}	
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 1200px) {
+  table {
+  width: 1200px;}
+}	
+	
+	
+	.personDetail td{
+		padding-left: 10px;
+	}
+	
+	.newContactPersonHeader{
+		background-color:#AFF1CF;		
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	.sign{
+		cursor: pointer;
+		font-size: 44px;
+		font-weight: bold;
+ 	}
+	
+
+	input[type="text"]{ 
+		padding: 4px 2px; line-height: 20px; 
+	}	
+	
+	input.largerCheckbox{
+        width: 20px;
+        height: 20px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+		pointer-events: none;
+		background-color: gainsboro;
+        }
+	
+	input.removeCheckbox{
+        width: 15px;
+        height: 15px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+        }	
+	
+	.editButton{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+	}
+	
+	.editButton:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}
+
+	.editCompanyButton{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+	}
+	
+	.editCompanyButton:hover{
+		background-color:blue; 
+  		color: white;
+		cursor: pointer;
+	}
+	
+	.whiteTable{
+		margin-left: auto;
+		margin-right: auto;	
+	}
+	
+	.addButton{
+		height: 60px;
+		font-size: 20px;
+		border-radius: 6px;
+		padding-left: 10px;
+		padding-right: 10px;
+		background-color: #EAF807;
+	}
+	
+	.addButton:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}
+
+
+	.checkSignBlack{
+		color: #000000;
+	}
+	
+	a:link {
+
+		color: black;
+		font-size: 15px;
+	}
+
+	a:hover {
+
+		color:blue;
+		font-size: 15px;
+	}
+		
+	
+.circle {
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: bluef;
+  text-align: center;
+  background: white;
+  display: inline-block;
+}
+	
+	.circle:hover{
+		cursor: pointer;
+	}
+
+	
+	
+	
+	
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /*border-bottom: 1px dotted black;  If you want dots under the hoverable text */
+	  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: bluef;
+  text-align: center;
+  background: white;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #CFE5E2;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}	
+	
+	
+	
+	
+	
+</style>	
+	
+	
+</head>
+
+<body>
+
+<!--	
+<table class="contactOptions">
+	<tr>
+	<td colspan="3">Contact Type options</td>
+	</tr>
+	<tr>
+	<td width="33%">
+		<ul start="1">
+	  	<li>Top Executive</li>
+  		<li>Primary</li>
+  		<li>Membership Dues</li>
+  		<li>Human Resources</li>
+		</ol>	
+	</td>
+	<td width="33%">
+		<ul start="5">
+	  	<li>Finances</li>
+  		<li>Safety</li>
+  		<li>Government Affairs and Public Policy</li>
+  		<li>Marketing</li>	
+		</ol>
+	<td width="33%">
+		<ul start="9">
+	  	<li>Environmental</li>
+  		<li>Tax</li>
+  		<li>Energy and Procurement</li>
+  		<li>Workers Compensation</li>	
+		</ol>
+	</td>	
+	</tr>	
+</table>	
+-->
+<table border="0" class="companyHeader">
+	<tr>
+	  <td align="center">
+		<span>CBIA Member No: (!$MG_accountnumber)&nbsp;&nbsp;&nbsp;&nbsp;(!$MG_accountname)</span>		
+	  </td>
+	</tr>	
+</table>
+<table border="0" class="personDetail">
+	<tr>
+		<td width="20%">&nbsp;</td>
+		<td width="40%"><strong>Current Information</strong></td>		
+	    <td width="45%">(!$MGIF_COMPANYUPDATETITLE)<strong>Updates (new info in blue)</strong>(!$MGENDIF)</td>	
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Company Phone:</strong></td>
+		<td width="40%">(!$MG_companyphone)</td>	
+	  <td width="45%" style="color: (!$MG_newcompanyphonecolor)">(!$MG_newcompanyphone)</td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Company Fax:</strong></td>
+		<td width="40%">(!$MG_companyfax)</td>	
+	  <td width="45%" style="color: (!$MG_newcompanyfaxcolor)">(!$MG_newcompanyfax)</td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top"><strong>Mailing Address:</strong></td>
+		<td width="40%" valign="top">(!$MG_companyaddress)</td>	
+	  <td width="45%" valign="top" style="color: (!$MG_newcompanyaddresscolor)">(!$MG_newcompanyaddress)</td>
+  </tr>	
+	<tr>
+		<td width="20%" valign="top"><strong>Physical Address:</strong></td>
+		<td width="40%" valign="top">(!$MG_physicaladdress)</td>	
+	  <td width="45%" valign="top" style="color: (!$MG_newphysicaladdresscolor)">(!$MG_newphysicaladdress)</td>
+  </tr>		
+  <tr>
+		<td width="20%"><strong>Employees in CT</strong></td>
+		<td width="40%">&nbsp;</td>	
+	  <td width="45%" style="color: blue">(!$MG_newctemployee)</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Annual Payroll:</strong></td>
+		<td width="40%">&nbsp;</td>	
+	  <td width="45%" style="color: blue">(!$MG_newpayroll)</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Primary Sic Code:</strong></td>
+		<td width="40%">(!$MG_sic)</td>	
+	  <td width="45%" style="color: (!$MG_newsiccolor)">(!$MG_newsic)</td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Company Website:</strong></td>
+		<td width="40%">(!$MG_website)</td>	
+	  <td width="45%" style="color: (!$MG_newwebsitecolor)">(!$MG_newwebsite)</td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Family Own Business:</strong></td>
+		<td width="40%">(!$MG_familyown)</td>	
+	  <td width="45%" style="color: (!$MG_newfamilyowncolor)">(!$MG_newfamilyown)</td>
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Type of Entity:</strong></td>
+		<td width="40%">(!$MG_entity)</td>	
+	  <td width="45%" style="color: (!$MG_newentitycolor)">(!$MG_newentity)</td>
+	</tr>
+</table>	
+<br>	
+<!--  existing contacts  -->	
+(!$MGREPEAT)	
+<table border="0" class="personHeader">
+    <tr>
+      <td width="50" align="center" valign="middle">
+      <div id="plusSign(!$MG_personid)" class="sign" style="display: block" onMouseOver="hoverSign(this)" onClick="expandPerson('(!$MG_personid)')" onMouseOut="awaySign(this)"><span>&#43;</span></div>
+	  <div id="minusSign(!$MG_personid)" class="sign" style="display: none" onMouseOver="hoverSign(this)" onClick="colapsePerson('(!$MG_personid)')" onMouseOut="awaySign(this)"><span>&#8722;</span></div></td>
+		<td width="400"><div id="contactName(!$MG_personid)" style="display: (!$MG_nameinblack)">(!$MG_contactname)</div>
+		<div id="contactNameMarked(!$MG_personid)" style="display: (!$MG_nameinred); color: red" >(!$MG_contactname)&nbsp;&nbsp;
+			&nbsp;Marked for Removal</div></td>
+	  <td>&nbsp;</td>
+    </tr>
+</table>
+	
+<div id="personSection(!$MG_personid)" style="display: (!$MG_blockornone)">
+<table border="0" class="personDetail">
+	<tr>
+		<td width="20%" align="right"></td>
+		<td colspan="2"><input type="checkbox" name="removeBox(!$MG_personid)" id="removeBox(!$MG_personid)" class="removeCheckbox" onClick="removeContact('(!$MG_personid)')" (!$MG_removeboxstatus)>
+		  Mark (!$MG_firstname) for removal: No Longer with Company</td>		
+    </tr>	
+	<tr>
+		<td width="20%">&nbsp;</td>
+		<td width="40%"><strong>Current Information</strong></td>		
+	    <td width="40%"><strong>(!$MGIF_SHOWUPDATETITLE)Updates (new info in blue)</strong>(!$MGENDIF)</td>	
+	</tr>	
+	<tr>
+		<td width="20%"><strong>Full Name:</strong></td>
+		<td width="40%">(!$MG_fullname)</td>	
+	  <td width="40%" style="color: (!$MG_newfullnamecolor)" >(!$MG_newfullname)</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Title:</strong></td>
+		<td width="40%">(!$MG_title)</td>	
+	  <td width="40%" style="color: (!$MG_newtitlecolor)" >(!$MG_newtitle)</td>
+	</tr>	
+	<tr>
+		<td width="20%" valign="top"><strong>Address:</strong></td>
+		<td width="40%" valign="top">(!$MG_address)</td>	
+	  <td width="40%" style="color: (!$MG_newaddresscolor)"  valign="top">(!$MG_newaddress)</td>
+  </tr>	
+	<tr>
+		<td width="20%"><strong>Phone:</strong></td>
+		<td width="40%">(!$MG_contactphone)</td>	
+	  <td width="40%" style="color: (!$MG_newcontactphonecolor)" >(!$MG_newcontactphone)</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Email:</strong></td>
+		<td width="40%">(!$MG_email)</td>	
+	  <td width="40%" style="color: (!$MG_newemailcolor)" >(!$MG_newemail)</td>
+	</tr>
+	<tr><td colspan="3"></td></tr>
+	<tr>
+		<td width="20%" valign="top"><strong>Contact Type:</strong><br>		  
+		  &nbsp;&#x2714;&nbsp;indicates this person is the CBIA contact for these types</td>
+		<td width="40%" valign="top">
+			(!$MGREPEAT)
+				(!$MG_currenttype)&nbsp;&nbsp;<div class="tooltip">i<span class="tooltiptext">contact type specific description displays here</span></div><br>
+			(!$MGENDREPEAT)
+		</td>	
+	  <td width="40%" valign="top">
+		  (!$MGREPEAT)
+		  (!$MG_newtype)<br>
+		  (!$MGENDREPEAT)
+		</td>
+	</tr>	
+</table>
+</div>
+<br>
+(!$MGENDREPEAT)
+
+<!--   new contacts  -->	
+
+	
+(!$MGIF_NEWCONTACT)	
+(!$MGREPEAT)	
+<table border="0" class="newContactPersonHeader">
+    <tr>
+      <td width="50" align="center" valign="middle">
+      <div id="plusSign(!$MG_ncpersonid)" class="sign" style="display: block" onMouseOver="hoverSign(this)" onClick="expandPerson('(!$MG_ncpersonid)')" onMouseOut="awaySign(this)"><span>&#43;</span></div>
+	  <div id="minusSign(!$MG_ncpersonid)" class="sign" style="display: none" onMouseOver="hoverSign(this)" onClick="colapsePerson('(!$MG_ncpersonid)')" onMouseOut="awaySign(this)"><span>&#8722;</span></div></td>
+		<td width="500"><div id="contactName(!$MG_ncpersonid)" style="display: block">(!$MG_ncfullname) (NEW CONTACT)</div>
+		</td>
+	  <td>&nbsp;</td>
+    </tr>
+</table>
+<div id="personSection(!$MG_ncpersonid)" style="display: block">	
+<table border="0" class="personDetail">
+	<tr>
+		<td width="20%" align="right"></td>
+		<td colspan="2"></td>		
+    </tr>	
+	<tr>
+		<td width="20%"><strong>Full Name:</strong></td>
+		<td width="40%">(!$MG_ncfullname)</td>	
+	  <td width="40%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Title:</strong></td>
+		<td width="40%">(!$MG_nctitle)</td>	
+	  <td width="40%">&nbsp;</td>
+	</tr>	
+	<tr>
+		<td width="20%" valign="top"><strong>Address:</strong></td>
+		<td width="40%" valign="top">(!$MG_ncaddress)</td>	
+	  <td width="40%" valign="top">&nbsp;</td>
+  </tr>	
+	<tr>
+		<td width="20%"><strong>Phone:</strong></td>
+		<td width="40%">(!$MG_nccontactphone)</td>	
+	  <td width="40%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="20%"><strong>Email:</strong></td>
+		<td width="40%">(!$MG_ncemail)</td>	
+	  <td width="40%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top"><strong>Contact Type:</strong><br>
+		  (This person is the CBIA contact for these types)
+		</td>
+		<td width="40%" valign="top">(!$MG_nccurrentlist)</td>	
+	  <td width="40%" valign="top">&nbsp;</td>
+	</tr>	
+</table>	
+	</div>
+	<br>
+(!$MGENDREPEAT)
+(!$MGENDIF)	
+
+<br>
+<table border="0" class="whiteTable">
+  <tbody>
+    <tr>
+      <td width="50%" align="center"><input type="button" name="button2" id="button2" value="Completed processing" class="addButton" onClick="completedProcessing()"> </td>
+		      <td width="50%" align="center"><input type="button" name="button2" id="button2" value="Return to the List" class="addButton" onClick="returnToList()"></td>
+    </tr>
+  </tbody>
+</table>	
+	
+<br><br>
+	
+	
+	
+	
+</body>
+</html>

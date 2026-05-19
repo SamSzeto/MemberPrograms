@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact Data Sheet Dashboard</title>
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}	
+	
+	</style>	
+	
+	
+</head>
+
+<body>
+<h1>&nbsp;</h1>
+<table width="90%" border="0">
+
+    <tr>
+      <td width="10px">&nbsp;</td>
+      <td><h1>CRM Contact Data Sheet - Email Log</h1>&nbsp;</td>
+    </tr>
+
+</table>
+<br>
+<table width="90%" border="0">
+
+    <tr>
+      <td width="10px">&nbsp;</td>
+      <td width="200px" valign="top">
+		  
+<form id="form1" name="form1" method="post" action="(!$MG_mwserver)(!$MG_mwscript)?">
+<table border="0" style="background-color: #EBF026" cellpadding="4px">
+
+    <tr>
+      <td valign="top"><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSEmailLog">Contact Data Sheet Email Log</a></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSSubmittedAccounts">Submitted Contact Data Sheet with Changes</a></td>
+    </tr>	  
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=CDSSendSingleEmailForm">Send Single Email</a></td>
+    </tr>	
+    <tr>
+      <td>&nbsp;</td>
+    </tr>	
+    <tr>
+      <td><input name="accountnumber" type="text" id="accountnumber" size="15" maxlength="5" placeholder="enter account number">&nbsp;
+        <input type="submit" name="submit" id="submit" value="Search">
+        <input name="appname" type="hidden" id="appname" value="MemberPrograms">
+        <input name="prgname" type="hidden" id="prgname" value="CDSAccountSearch"></td>
+    </tr>	
+</table>
+		  </form>	
+		</td>
+      <td valign="top">
+		  <table width="100%" border="0" cellpadding="4px">
+
+          <tr>
+			<td>&nbsp;</td>
+            <td><strong>Date Emailed</strong></td>
+            <td><strong># of Accounts</strong></td>
+            <td><strong># of Submission</strong></td>
+            <td><strong># of Submission with Updates</strong></td>	
+            <td><strong>Datasheet Type</strong></td>				  
+            <td><strong>Bounced Email</strong></td>			  
+            <td><strong>Missing Email Address</strong></td>			  
+
+          </tr>
+		(!$MGREPEAT)	
+          <tr>
+			<td><a href="(!$MG_mwserver1)(!$MG_mwscript1)?appname=MemberPrograms&prgname=CDSViewAccountList&arguments=-A(!$MG_emaildatetime),-A1">View List</a></td>
+            <td>(!$MG_dateemailed)</td>
+            <td>(!$MG_accounttotal)</td>
+            <td>(!$MG_submittotal)</td>
+            <td>(!$MG_totalupdates)</td>
+            <td>(!$MG_type)</td>
+            <td align="center"><a href="(!$MG_mwserver1)(!$MG_mwscript1)?appname=MemberPrograms&prgname=CDSBouncedList&arguments=-A(!$MG_emaildatetime),-A1">(!$MG_bounced)</a></td>
+            <td align="center"><a href="(!$MG_mwserver1)(!$MG_mwscript1)?appname=MemberPrograms&prgname=CDSMissingEmailList&arguments=-A(!$MG_batchid),-A1">(!$MG_missingemail)</a></td>				  
+
+          </tr>
+		(!$MGENDREPEAT)	
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>	
+		    <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>	</tr>
+     </table></td>
+    </tr>
+
+</table>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CBIA - Contact Data Sheet</title>
+	
+<script language="javascript">
+	
+function hoverSign(sign)	
+	{
+	sign.style.color = "blue";
+	
+	}
+	
+function awaySign(sign)	
+	{
+	sign.style.color = "black";	
+	}	
+	
+function expandPerson(personID)
+	{
+	document.getElementById('personSection' + personID).style.display="block";
+	document.getElementById('plusSign' + personID).style.display="None";	
+	document.getElementById('minusSign' + personID).style.display="block";		
+	}
+	
+function colapsePerson(personID)
+	{
+	document.getElementById('personSection' + personID).style.display="none";
+	document.getElementById('plusSign' + personID).style.display="block";	
+	document.getElementById('minusSign' + personID).style.display="none";		
+	}	
+	
+function onLoadScript()	
+	{
+	document.getElementById('personSection(!$MG_persontoexpand)').style.display="block";
+	document.getElementById('plusSign(!$MG_persontoexpand)').style.display="None";	
+	document.getElementById('minusSign(!$MG_persontoexpand)').style.display="block";	
+	}
+	
+
+function editCompanyInfo()	
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=EditCompany&arguments=-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";		
+	}
+	
+function editInfo(personID)
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=EditContact&arguments=-A" + personID + ",-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}
+
+	
+function addContact()
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=AddContact&arguments=-A,-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}		
+
+function editNewContactInfo(personID)
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=AddContact&arguments=-A" + personID + ",-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}	
+	
+function deleteSavedUpdates(personID)
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=DeleteUpdatesOrNewContact&arguments=-A" + personID + ",-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}
+	
+function deleteAccountUpdates()
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=DeleteAccountUpdates&arguments=-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}
+	
+function submitToProcess()
+	{
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=SubmitToProcess&arguments=-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";
+	}	
+	
+function removalToggle(personID)
+	{
+	eleNamne = 	'removeBox' + personID;
+	if (document.getElementById('removeBox' + personID).checked)
+		{
+		document.getElementById('contactName' + personID).style.display="none";
+		document.getElementById('contactNameMarked' + personID).style.display="block";			
+		}
+		else
+			{
+			document.getElementById('contactName' + personID).style.display="block";
+			document.getElementById('contactNameMarked' + personID).style.display="none";			
+			}
+	}
+	
+	
+function removeContact(personID)
+	{
+	var eleNamne = 	'removeBox' + personID;
+	var checkedValue = '';
+	if (document.getElementById('removeBox' + personID).checked)	
+		{checkedValue = 'Y'}
+		
+	window.location.href="(!$MG_mwserver)(!$MG_mwscript)?appname=MemberPrograms&prgname=RemoveContact&arguments=-A" + personID + ",-A" + checkedValue + ",-A(!$MG_urlidentifier),-A(!$MG_securityphrase)";		
+	}
+	
+	</script>	
+	
+	
+	
+<style type="text/css">
+	
+	body{
+		font-family: arial, verdana, sans-serif;
+	}
+
+	.pageHeader{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+	}	
+
+		
+	.contactOptions{
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;	
+		font-family: sans serif;
+		border-collapse: collapse;
+		border: 1px solid;
+		padding-left: 5px;
+		padding-right: 5px;
+		border-radius: 10px;
+	}	
+	
+	ol li{ padding: 5px 0px; }
+	
+	ul li{ padding: 3px 0px; 
+		font-size: 16px;
+	}
+	
+	.companyHeader{
+		font-size: 24px;
+		background-color: #CFE5E2;		
+		margin-left: auto;
+		margin-right: auto;		
+		line-height: 80px;
+	}
+	
+	.personHeader{
+		background-color: #DF9B9C;		
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.personHeader tr{
+		line-height: 50px;
+	}
+	
+	.personDetail{
+		background-color:#E4E4E4;		
+		font-size: 16px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.personDetail tr{
+		line-height: 30px; 
+	}
+	
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 800px) {
+  table {
+  width: 90%;}
+}	
+
+/* if the browser window is at least 800px-s wide: */
+@media screen and (min-width: 1200px) {
+  table {
+  width: 1200px;}
+}	
+	
+	
+	.personDetail td{
+		padding-left: 10px;
+	}
+	
+	.newContactPersonHeader{
+		background-color:#AFF1CF;		
+		font-size: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	
+	.sign{
+		cursor: pointer;
+		font-size: 44px;
+		font-weight: bold;
+ 	}
+	
+
+	input[type="text"]{ 
+		padding: 4px 2px; line-height: 20px; 
+	}	
+	
+	input.largerCheckbox{
+        width: 20px;
+        height: 20px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+		pointer-events: none;
+		background-color: gainsboro;
+        }
+	
+	input.removeCheckbox{
+        width: 15px;
+        height: 15px;
+		vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+        }	
+	
+	.editButton{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+	}
+	
+	.editButton:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}
+
+	.editCompanyButton{
+		height: 40px;
+		font-size: 15px;
+		border-radius: 6px;
+	}
+	
+	.editCompanyButton:hover{
+		background-color:blue; 
+  		color: white;
+		cursor: pointer;
+	}
+	
+	.whiteTable{
+		margin-left: auto;
+		margin-right: auto;	
+	}
+	
+	.addButton{
+		height: 60px;
+		font-size: 20px;
+		border-radius: 6px;
+		padding-left: 10px;
+		padding-right: 10px;
+		background-color: #EAF807;
+	}
+	
+	.addButton:hover{
+		background-color: blue; 
+  		color: white;
+		cursor: pointer;
+	}
+
+
+	.checkSignBlack{
+		color: #000000;
+	}
+	
+		
+	
+.circle {
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: bluef;
+  text-align: center;
+  background: white;
+  display: inline-block;
+}
+	
+	.circle:hover{
+		cursor: pointer;
+	}
+
+	
+	
+	
+	
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /*border-bottom: 1px dotted black;  If you want dots under the hoverable text */
+	  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: bluef;
+  text-align: center;
+  background: white;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #CFE5E2;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}	
+	
+	
+	
+	
+	
+</style>	
+	
+	
+</head>
+
+<body onload="onLoadScript()">
+		
+<table border="0" class="pageHeader">
+	<tr>
+	<td>
+	<img width="207" height="134" src="https://www.cbia.com/wp-content/uploads/2022/05/brand-cbia.svg">	
+	</td>
+	</tr>
+</table>
+	
+<table border="0" class="pageHeader">
+	<tr>
+	<td>
+	  <p>Thank you for providing updated information for (!$MG_companyname). <br>
+      </p>
+	  Click <a href="https://www.cbia.com">here</a> to return to cbia.com</td>
+	</tr>
+</table>	
+
+
+</body>
+</html>
